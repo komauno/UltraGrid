@@ -206,7 +206,7 @@ struct GridSettingsView: View {
                     IntRow(title: "横方向", value: gridBinding(\.cols), range: 1...6)
                     IntRow(title: "縦方向", value: gridBinding(\.rows), range: 1...6)
                     Text(displays.count > 1
-                         ? "モニタごとに分割数を設定できます。スナップ時は、対象ウィンドウがあるモニタの設定が使われます。"
+                         ? "ディスプレイごとに分割数を設定できます。"
                          : "スナップピッカーとドラッグスナップで使うグリッドの分割数を設定します。")
                         .font(.caption).foregroundColor(.secondary).fixedSize(horizontal: false, vertical: true)
                 }
@@ -431,7 +431,7 @@ struct ShortcutSettingsView: View {
         let alert = NSAlert()
         alert.alertStyle = .warning
         alert.messageText = "クイック操作を既定に戻しますか？"
-        alert.informativeText = "現在のクイック操作・並び順・割り当てたショートカットはすべて破棄され、初期状態に戻ります。この操作は取り消せません。"
+        alert.informativeText = "現在のクイック操作はすべて破棄されます。"
         alert.addButton(withTitle: "既定に戻す")   // 先頭が既定ボタン
         alert.addButton(withTitle: "キャンセル")
         if let cancel = alert.buttons.last { cancel.keyEquivalent = "\u{1b}" }  // Esc で取消

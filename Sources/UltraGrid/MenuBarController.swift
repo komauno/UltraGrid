@@ -111,7 +111,7 @@ final class MenuBarController: NSObject, NSMenuDelegate {
     @objc private func capturePreset() {
         let alert = NSAlert()
         alert.messageText = "現在のウィンドウ配置を保存"
-        alert.informativeText = "プリセット名を入力してください（例: 寄り付き用 / 監視用）。"
+        alert.informativeText = "プリセット名を入力してください。"
         let field = NSTextField(frame: NSRect(x: 0, y: 0, width: 240, height: 24))
         field.placeholderString = "レイアウト名"
         alert.accessoryView = field
