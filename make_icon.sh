@@ -46,5 +46,24 @@ gen() { # gen <px>
 echo "各サイズを書き出し中…"
 for px in 16 32 64 128 256 512 1024; do gen "${px}"; done
 
+# Contents.json をファイル参照つきに書き戻す（リセット後でも確実に反映されるように）。
+cat > "${SET_DIR}/Contents.json" <<'JSON'
+{
+  "images" : [
+    { "idiom" : "mac", "scale" : "1x", "size" : "16x16",   "filename" : "icon_16.png" },
+    { "idiom" : "mac", "scale" : "2x", "size" : "16x16",   "filename" : "icon_32.png" },
+    { "idiom" : "mac", "scale" : "1x", "size" : "32x32",   "filename" : "icon_32.png" },
+    { "idiom" : "mac", "scale" : "2x", "size" : "32x32",   "filename" : "icon_64.png" },
+    { "idiom" : "mac", "scale" : "1x", "size" : "128x128", "filename" : "icon_128.png" },
+    { "idiom" : "mac", "scale" : "2x", "size" : "128x128", "filename" : "icon_256.png" },
+    { "idiom" : "mac", "scale" : "1x", "size" : "256x256", "filename" : "icon_256.png" },
+    { "idiom" : "mac", "scale" : "2x", "size" : "256x256", "filename" : "icon_512.png" },
+    { "idiom" : "mac", "scale" : "1x", "size" : "512x512", "filename" : "icon_512.png" },
+    { "idiom" : "mac", "scale" : "2x", "size" : "512x512", "filename" : "icon_1024.png" }
+  ],
+  "info" : { "author" : "xcode", "version" : 1 }
+}
+JSON
+
 rm -f "$(dirname "${TMP}")"/* 2>/dev/null || true
 printf "\n\033[1;32m✅ アイコンを更新しました。\033[0m\n  次に  ./build_app.sh  を実行すると反映されます。\n"
