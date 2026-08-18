@@ -206,7 +206,7 @@ struct GridSettingsView: View {
                     IntRow(title: "横方向", value: gridBinding(\.cols), range: 1...6)
                     IntRow(title: "縦方向", value: gridBinding(\.rows), range: 1...6)
                     Text(displays.count > 1
-                         ? "ディスプレイごとに分割数を設定できます。"
+                         ? "このディスプレイにおける、スナップピッカーとドラッグスナップで使うグリッドの分割数を設定します。"
                          : "スナップピッカーとドラッグスナップで使うグリッドの分割数を設定します。")
                         .font(.caption).foregroundColor(.secondary).fixedSize(horizontal: false, vertical: true)
                 }
