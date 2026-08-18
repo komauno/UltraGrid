@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+
+# XcodeGen で生成される（project.yml から再生成できるのでコミットしない）
+UltraGrid.xcodeproj/
+
+# ビルド成果物
+build/
+dist/
+DerivedData/
+*.app
+*.zip
+
+# ※ アプリアイコン（Assets.xcassets の icon_*.png）はコミットします。
+#   （クローンした人もそのままアイコン付きでビルドできるように）
+
+# ユーザー個別
+*.xcuserstate
+xcuserdata/
